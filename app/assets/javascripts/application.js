@@ -11,9 +11,13 @@
 // about supported directives.
 //
 //= require jquery3
-//= require popper
-//= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
+//= require popper
+//= require bootstrap-sprockets
+//= require moment
+//= require fullcalendar
+//= require daterangepicker
+//= require bootstrap-datepicker
 //= require activestorage
 //= require_tree .

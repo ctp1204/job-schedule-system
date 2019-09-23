@@ -1,0 +1,10 @@
+#edit_task.modal.fade
+  .modal-dialog
+    .modal-content
+      .modal-header
+        h4.modal-title
+          = t ".edit_task"
+        button.close[type="button" data-dismiss="modal" aria-hidden="true"]
+          | ×
+      .modal-body
+        = render 'form', task: @task

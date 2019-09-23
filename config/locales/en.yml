@@ -2,6 +2,19 @@ en:
   layouts:
     application:
       title-app: "Job Schedule"
+    menus:
+      edit_user: "Edit Profile"
+      logout: "Log out"
+      create_user: "Create Account"
+      sigin: "Sign in"
+  tasks:
+    edit:
+      edit_task: "Edit Task"
+    new:
+      create_taks: "Create New Task"
+    form:
+      delete_task: "Delete"
+      sure: "Are you sure?"
   static_pages:
     home:
       title-home: "Static pages of home"

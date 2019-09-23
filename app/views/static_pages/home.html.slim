@@ -1,2 +1,7 @@
-h1
-  = t ".title-home"
+- if user_signed_in?
+  .row
+    .col-md-1
+    .col-md-2
+      #mini-calendar
+    .col-md-8
+      .calendar
