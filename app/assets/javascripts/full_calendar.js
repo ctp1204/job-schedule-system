@@ -24,13 +24,7 @@ initialize_calendar = function() {
 
         calendar.fullCalendar('unselect');
       },
-      dayClick: function(fecha){
-        if(fecha.getDay() == 6 || fecha.getDay() == 0){
-          return;
-        }else{
-          //thực hiện những ngày khác ở đây
-        }
-      },
+     
       eventDrop: function(task, delta, revertFunc) {
         task_data = {
           task: {
