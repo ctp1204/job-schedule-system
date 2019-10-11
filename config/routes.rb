@@ -37,6 +37,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root "suggests#index"
     resources :suggests
+    resources :workings
     resources :notifications
   end
 end

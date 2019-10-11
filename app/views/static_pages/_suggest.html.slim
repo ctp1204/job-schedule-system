@@ -1,16 +1,17 @@
-- if suggest && suggest.waiting?
-  .btn.btn-warning = t ".waiting"
-- else
-  = link_to t(".suggest"), new_suggest_path, class: "btn btn-success suggest",
-                data:{toggle: "modal", target: "#suggests"}
-  #suggests.modal.fade[tabindex="-1" role="dialog" aria-labelledby="titlesuggests" aria-hidden="true"]
-    .modal-dialog[role="document"]
-      .modal-content
-        .modal-header
-          h5#titlesuggests.modal-title
-            = t ".reason_off"
-          button.close[type="button" data-dismiss="modal" aria-label="Close"]
-            span[aria-hidden="true"]
-              | ×
-        .modal-body
-          = render "suggests/form_suggest"
+#suggest_status
+  - if suggest && suggest.waiting?
+    .btn.btn-warning = t ".waiting"
+  - else
+    = link_to t(".suggest"), new_suggest_path, class: "btn btn-success suggest",
+                  data:{toggle: "modal", target: "#suggests"}
+    #suggests.modal.fade[tabindex="-1" role="dialog" aria-labelledby="titlesuggests" aria-hidden="true"]
+      .modal-dialog[role="document"]
+        .modal-content
+          .modal-header
+            h5#titlesuggests.modal-title
+              = t ".reason_off"
+            button.close[type="button" data-dismiss="modal" aria-label="Close"]
+              span[aria-hidden="true"]
+                | ×
+          .modal-body
+            = render "suggests/form_suggest"

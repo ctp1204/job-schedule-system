@@ -1,0 +1,19 @@
+= select_date(date = Date.current, options = {}, html_options = {})
+= button_tag "OK", id: "get_date"
+table.table.table-striped#accordion
+  thead
+    tr
+      th
+        = t ".id_user"
+      th
+        = t ".user_name"
+      th
+        = t ".email"
+      th
+        = t ".checkin"
+      th
+        = t ".checkout"
+      th
+        = t ".status"
+  tbody#list_user
+    = render @workings

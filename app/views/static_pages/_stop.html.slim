@@ -1,7 +1,8 @@
-- if working.checkout.to_datetime != working.updated_at.to_datetime
-  - if Time.now.to_datetime > working.checkout.localtime.to_datetime || current_user.open?
-    = link_to t(".stop_working"), working_path(id: working.id ,user_id: current_user.id), method: :patch, remote: true, :data => {confirm: t(".send_report")}, class: "open-btn-stop"
+#stop_status
+  - if working.checkout.to_datetime != working.updated_at.to_datetime
+    - if Time.now.to_datetime > working.checkout.localtime.to_datetime || current_user.open?
+      = link_to t(".stop_working"), working_path(id: working.id ,user_id: current_user.id), method: :patch, remote: true, :data => {confirm: t(".send_report")}, class: "open-btn-stop"
+    - else
+      = link_to t(".stop_working"), "#", remote: true, :data => {confirm: t(".not_press")}, class: "close-btn-stop"
   - else
-    = link_to t(".stop_working"), "#", remote: true, :data => {confirm: t(".not_press")}, class: "close-btn-stop"
-- else
-  = link_to t(".done_working"), "#", class: "btn btn-primary done"
+    = link_to t(".done_working"), "#", class: "btn btn-primary done"

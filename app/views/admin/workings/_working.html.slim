@@ -1,0 +1,21 @@
+tr id="admin_user_#{working.user.id}"
+  td
+    = working.user.id
+  td
+    = working.user.username
+  td
+    = working.user.email
+  td
+    = working.checkin.localtime.strftime("%d/%m/%Y %T")
+  td
+    - if working.checkout.localtime == working.updated_at.localtime
+      = working.checkout.localtime.strftime("%d/%m/%Y %T")
+    - else
+      = "Chua checkout"
+  td
+    - if working.content.present?
+        .badge.badge-danger
+          = working.content
+    - else
+        .badge.badge-success
+          | Done
