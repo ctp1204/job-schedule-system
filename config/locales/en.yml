@@ -101,8 +101,8 @@ en:
       title-home: "Static pages of home"
       start: "start"
     working:
-      date_working: "Date wokring: "
-      start_working: "Start wokring: "
+      date_working: "Date working: "
+      start_working: "Start working: "
       end_working: "End working: "
       total_working: "Total time work today: "
       status: "Status working: "

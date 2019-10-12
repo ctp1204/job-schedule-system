@@ -1,5 +1,6 @@
-= select_date(date = Date.current, options = {}, html_options = {})
-= button_tag "OK", id: "get_date"
+.row
+  = date_field_tag(:select_date, Date.today, class: "form-control col-md-2")
+
 table.table.table-striped#accordion
   thead
     tr
@@ -15,5 +16,5 @@ table.table.table-striped#accordion
         = t ".checkout"
       th
         = t ".status"
-  tbody#list_user
+  tbody#list_working
     = render @workings

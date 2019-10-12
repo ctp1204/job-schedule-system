@@ -5,7 +5,12 @@ module Admin
     before_action :load_working, only: :update
 
     def index
-      @workings = Working.all.select{|w| w.checkin.to_date == Time.now.to_date }
+      params[:working_date] = Time.now unless params[:working_date]
+      @workings = Working.all.select{ |w| w.checkin.to_date == params[:working_date].to_date }
+      respond_to do |format|
+        format.html
+        format.js
+      end
     end
 
     private
