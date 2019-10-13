@@ -1,0 +1,7 @@
+#sidebar-wrapper.bg-light.border-right
+  .sidebar-heading
+    = t ".schedule"
+  .list-group.list-group-flush
+    = link_to t(".suggests"), admin_suggests_path, class: "list-group-item list-group-item-action bg-light"
+    = link_to t(".workings"), admin_workings_path, class: "list-group-item list-group-item-action bg-light"
+    = link_to t(".holidays"), admin_holidays_path, class: "list-group-item list-group-item-action bg-light"

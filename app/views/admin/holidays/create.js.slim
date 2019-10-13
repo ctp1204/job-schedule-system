@@ -1,0 +1,7 @@
+- if @holiday.errors.any?
+  |
+    $("#error_messages").html('#{ j render "shared/error_messages", object: @holiday }'); $(".modal").animate({scrollTop : 0}, 500);
+- else
+  |
+    $("#list_holidays").prepend('#{ j render "admin/holidays/holiday", holiday: @holiday}')
+    $('.modal').modal('hide');

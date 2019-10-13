@@ -1,0 +1,13 @@
+= link_to t(".add_holiday"), new_admin_holiday_path, class: "btn btn-success suggest",
+              data:{toggle: "modal", target: "#holidays"}
+#holidays.modal.fade[tabindex="-1" role="dialog" aria-labelledby="titleholidays" aria-hidden="true"]
+  .modal-dialog[role="document"]
+    .modal-content
+      .modal-header
+        h5#titleholidays.modal-title
+          = t ".reason_off"
+        button.close[type="button" data-dismiss="modal" aria-label="Close"]
+          span[aria-hidden="true"]
+            | ×
+      .modal-body
+        = render "admin/holidays/form_holiday"

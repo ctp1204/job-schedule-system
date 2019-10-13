@@ -17,6 +17,7 @@ class RecurringTasksController < ApplicationController
 
   def create
     @recurring_task = current_user.recurring_tasks.create recurring_task_params
+    tasks(@recurring_task)
   end
 
   def update
@@ -39,5 +40,12 @@ class RecurringTasksController < ApplicationController
 
   def load_recurring_task
     @recurring_task = RecurringTask.find_by id: params[:id]
+  end
+
+  def tasks recurring_task
+    array_tasks = recurring_task.tasks(@recurring_task.anchor, Time.now.end_of_month + @recurring_task.limit.month)
+    array_tasks.each do |a|
+      Task.create(user_id: current_user.id, title: recurring_task.title, start: a.to_date, end: a.to_date, color: recurring_task.color)
+    end
   end
 end

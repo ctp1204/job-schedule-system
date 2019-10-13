@@ -31,4 +31,8 @@ class RecurringTask < ApplicationRecord
     end_frequency = end_date ? end_date.to_date : Date.today.next_year
     schedule.occurrences_between(start_frequency, end_frequency)
   end
+
+  def all_day_task?
+    start == start.midnight && self.end == self.end.midnight
+  end
 end

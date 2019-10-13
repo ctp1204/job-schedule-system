@@ -1,0 +1,16 @@
+table.table.table-striped#accordion
+  thead
+    tr
+      th
+        = t ".id_holiday"
+      th
+        = t ".name_holiday"
+      th
+        = t ".start"
+      th
+        = t ".end"
+      th
+        = t ".color"
+  tbody#list_holidays
+    = render "admin/holidays/new"
+    = render @holidays

@@ -50,12 +50,14 @@ ActiveRecord::Schema.define(version: 2019_10_06_060959) do
   end
 
   create_table "holidays", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
     t.string "title"
     t.datetime "start"
     t.datetime "end"
     t.string "color"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_holidays_on_user_id"
   end
 
   create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -113,6 +115,7 @@ ActiveRecord::Schema.define(version: 2019_10_06_060959) do
     t.string "title"
     t.datetime "start"
     t.datetime "end"
+    t.integer "progress"
     t.string "color"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -153,6 +156,7 @@ ActiveRecord::Schema.define(version: 2019_10_06_060959) do
 
   add_foreign_key "chatroom_users", "chatrooms"
   add_foreign_key "chatroom_users", "users"
+  add_foreign_key "holidays", "users"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
   add_foreign_key "notifications", "suggests"

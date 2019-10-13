@@ -10,5 +10,9 @@ html
   body
     = render "shared/flash_messages"
     = render "shared/menu-admin"
-    .container-fluid
-      = yield
+    #wrapper.d-flex
+      = render "shared/left-admin"
+      .container-fluid
+        button#menu-toggle.btn.btn-primary
+          | Show Menu
+        = yield

@@ -16,6 +16,7 @@
       - @users.each do |user|
         tr
           td
+            - next if user.id == current_user.id
             = link_to direct_message_path(user), method: :post, data: {behavior: "chatroom-link"} do
               = online_status(user)
           td = user.email

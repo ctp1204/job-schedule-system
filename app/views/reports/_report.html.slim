@@ -4,6 +4,8 @@ tr
   td
     = report.task.color unless report.task.color.blank?
   td
-    = report.task.start.localtime
+    = report.task.progress
+  td
+    = report.task.start.strftime("%T %F")
   td.action
-    = report.task.start.localtime
+    = report.task.end.strftime("%T %F")

@@ -7,4 +7,9 @@ $(document).ready(function() {
       data: { working_date: $(this).val() }
     });
   });
+
+  $("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+  });
 });

@@ -31,7 +31,7 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit :title, :date_range, :start, :end, :color, :status
+    params.require(:task).permit :title, :date_range, :start, :end, :progress, :color, :status
   end
 
   def load_task

@@ -11,11 +11,18 @@ tr id="working#{working.id}"
     - if working.checkout.localtime == working.updated_at.localtime
       = working.checkout.localtime.strftime("%d/%m/%Y %T")
     - else
-      = "Chua checkout"
+      = t ".no_checkout"
   td
     - if working.content.present?
         .badge.badge-danger
           = working.content
     - else
         .badge.badge-success
-          | Done
+          = t ".work_on"
+  td
+    - if working.checkout.localtime == working.updated_at.localtime
+        .badge.badge-success
+          = t ".done"
+    - else
+        .badge.badge-warning
+          = t ".working"

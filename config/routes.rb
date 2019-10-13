@@ -38,6 +38,7 @@ Rails.application.routes.draw do
     root "suggests#index"
     resources :suggests
     resources :workings
+    resources :holidays, only: [:index, :new, :create]
     resources :notifications
   end
 end
